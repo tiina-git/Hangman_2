@@ -1,6 +1,0 @@
-name;word;letters;game length;game time
-Unknown;maja;H, O, G, B;21;2025-02-24 22:18:28
-Tormi;maja;;7;2025-02-24 23:39:28
-Mati;kass;H;13;2025-02-24 23:39:47
-Juhan;maja;Ä;21;2025-02-24 23:58:09
-Joosep;kass;G, U, B;17;2025-02-24 23:58:37
