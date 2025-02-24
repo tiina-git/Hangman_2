@@ -18,7 +18,6 @@ class Database:
         self.cursor = None
         self.connect()  # Loo ühendus
         self.cursor = self.conn.cursor()
-
         self.check_if_table_exists()
         self.create_table_leaderboard()
         self.get_leaderboard()
@@ -58,7 +57,7 @@ class Database:
 
 
     def create_table_leaderboard(self):
-        # Kui tabel leaderboard puudub
+        """ Kui tabel leaderboard puudub"""
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS leaderboard (
                 id NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -107,6 +106,7 @@ class Database:
 
 
     def get_categories(self):
+        """Vali kategooriad"""
         self.cursor.execute("SELECT DISTINCT category FROM words")
         data = self.cursor.fetchall()
         categories = [category[0] for category in data]
@@ -115,18 +115,15 @@ class Database:
         print(f'Kategooriad: {categories}.')
         return [category.capitalize() for category in categories]
 
-
-    def close(self):
-        self.conn.close()
-
-
     def get_leaderboard(self):
+        """Loe edetabeli andmeid"""
         self.cursor.execute("select * from leaderboard")
         result = self.cursor.fetchall()
         return result
 
 
-
-
+    def close(self):
+        """Sulge andmebaas"""
+        self.conn.close()
 
 
