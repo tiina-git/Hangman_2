@@ -1,0 +1,4 @@
+word;category
+maja;hoone
+hiir;loom
+kass;loom
